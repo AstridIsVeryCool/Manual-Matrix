@@ -37,25 +37,6 @@ void free_matrix(matrix *m)
 {
     free(m->data);
 }
-
-void display_matrix(matrix *m)
-{
-    printf("_");
-    for(int i = (m->columns) * (length_of_longest_int_in_matrix(&m)+2); i >= 0; i--)
-    {   
-        printf(" ");
-    }
-    printf("_\n");
-    int current_row;
-    for(current_row = 0; current_row < m->rows; current_row++)
-    {
-        for (int current_column = 0; current_column < m->columns; current_column++)
-        {
-
-        }
-    }
-}
-
 int get_length_of_int(int x)
 {
     return (int)(ceil(log10(x)));
@@ -74,6 +55,26 @@ int length_of_longest_int_in_matrix(matrix *m)
     return longest_length;
 }
 
+
+void display_matrix(matrix *m)
+{
+    printf("_");
+    for(int i = (m->columns) * (length_of_longest_int_in_matrix(m)+2); i >= 0; i--)
+    {   
+        printf(" ");
+    }
+    printf("_\n");
+    int current_row;
+    for(current_row = 0; current_row < m->rows; current_row++)
+    {
+        for (int current_column = 0; current_column < m->columns; current_column++)
+        {
+
+        }
+    }
+}
+
+
 int main()
 {
     printf("Welcome to Astrid's Epic and Based Manual Matrix Manipulation!!!!!!");
@@ -91,6 +92,7 @@ int main()
         if(choice == 1)
         {
             display_matrix(&test_matrix);
+            valid_choice = 1;
         }
         
     }
